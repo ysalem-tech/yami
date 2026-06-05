@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Nadir 2025 | Mayorista</title>
+<style>
+  :root {
+    --bg: #FAF3EC;
+    --purple: #6B2FA0;
+    --purple-light: #EDE3F7;
+    --white: #ffffff;
+    --gray-text: #555;
+    --code-color: #999;
+    --orange: #F5A11E;
+    --card-radius: 16px;
+    --font: 'Segoe UI', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: #222;
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .cover-logo { font-size: 52px; font-weight: 900; color: #111; letter-spacing: -2px; }
+  .cover-logo span { color: var(--purple); }
+  .cover-subtitle { font-size: 16px; color: var(--gray-text); letter-spacing: 4px; text-transform: uppercase; margin-top: 6px; }
+  .cover-edition {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 18px;
+    text-transform: uppercase;
+  }
+  .cover-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #111;
+    margin-top: 50px;
+    line-height: 1.05;
+  }
+  .cover-desc {
+    font-size: 18px;
+    color: var(--gray-text);
+    max-width: 500px;
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+  .cover-blob {
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 500px; height: 500px;
+    background: var(--purple);
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+  .cover-blob2 {
+    position: absolute;
+    top: -60px; right: 120px;
+    width: 300px; height: 300px;
+    background: var(--orange);
+    border-radius: 50%;
+    opacity: 0.12;
+  }
+  .cover-brands {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    align-items: center;
+  }
+  .cover-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 1px;
+  }
+  .cover-brand.light { color: #aaa; font-weight: 500; font-size: 14px; }
+
+  /* ===== INDEX ===== */
+  .toc {
+    padding: 60px 80px;
+    page-break-after: always;
+  }
+  .toc h2 { font-size: 36px; font-weight: 900; color: #111; margin-bottom: 30px; }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .toc-item {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .toc-item:hover { box-shadow: 0 4px 16px rgba(107,47,160,0.15); }
+  .toc-num {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--purple);
+    min-width: 36px;
+  }
+  .toc-name { font-size: 15px; font-weight: 600; }
+  .toc-count { font-size: 12px; color: var(--code-color); margin-top: 2px; }
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 50px 60px 60px;
+    page-break-before: always;
+  }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    gap: 30px;
+  }
+  .section-header-left { flex: 1; }
+  .section-logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: #111;
+    letter-spacing: -1px;
+  }
+  .section-logo span { color: var(--purple); }
+  .section-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--purple);
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .section-subtitle {
+    font-size: 15px;
+    color: var(--gray-text);
+    margin-top: 8px;
+  }
+  .section-hero {
+    width: 220px;
+    height: 160px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e8ddf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .section-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .section-hero-placeholder {
+    font-size: 11px;
+    color: #b0a0c8;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* ===== SUBSECTION ===== */
+  .subsection { margin-bottom: 48px; }
+  .subsection-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    border-left: 4px solid var(--purple);
+    padding-left: 12px;
+    margin-bottom: 20px;
+  }
+  .subsection-note {
+    font-size: 13px;
+    color: var(--gray-text);
+    margin-top: 4px;
+    margin-left: 16px;
+  }
+
+  /* ===== PRODUCT GRID ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  /* ===== PRODUCT CARD ===== */
+  .card {
+    background: var(--white);
+    border-radius: var(--card-radius);
+    padding: 14px 12px 16px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: 0 6px 20px rgba(107,47,160,0.12); }
+  .card.featured {
+    border: 2px solid var(--purple);
+  }
+  .card.featured::before {
+    content: 'Destacado';
+    position: absolute;
+    top: -10px; left: 12px;
+    background: var(--purple);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .card.new::after {
+    content: 'NUEVO';
+    position: absolute;
+    top: 8px; right: 8px;
+    background: var(--orange);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* Product image */
+  .card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F3EDF9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+  }
+  .card-img-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #C0AED9;
+  }
+  .card-img-placeholder svg { width: 32px; height: 32px; }
+  .card-img-placeholder span { font-size: 10px; text-align: center; line-height: 1.3; }
+  .card-img:hover .card-img-overlay {
+    opacity: 1;
+  }
+  .card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(107,47,160,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s;
+    border-radius: 10px;
+  }
+  .card-img-overlay span {
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px;
+  }
+
+  /* Card text */
+  .card-cat {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--code-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .card-name {
+    font-size: 11px;
+    color: var(--gray-text);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .card-model {
+    font-size: 13px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1.3;
+  }
+  .card-capacity {
+    font-size: 11px;
+    color: var(--code-color);
+    margin-top: 2px;
+  }
+  .card-desc {
+    font-size: 10px;
+    color: var(--gray-text);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .card-price-wrap { margin-top: 8px; }
+  .card-price-label {
+    font-size: 9px;
+    color: var(--code-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .card-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--purple);
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+    cursor: text;
+    line-height: 1.2;
+    padding: 0;
+  }
+  .card-price:focus {
+    background: var(--purple-light);
+    border-radius: 6px;
+    padding: 2px 6px;
+  }
+  .card-price-sub {
+    font-size: 10px;
+    color: var(--code-color);
+    display: block;
+  }
+  .card-code {
+    font-size: 9px;
+    color: var(--code-color);
+    margin-top: 6px;
+    font-family: monospace;
+  }
+
+  /* ===== ACCENT ===== */
+  .accent-dot {
+    width: 10px; height: 10px;
+    background: var(--orange);
+    border-radius: 50%;
+    position: absolute;
+    left: -5px; top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* ===== BLOB decoration ===== */
+  .blob-section {
+    position: relative;
+    overflow: hidden;
+  }
+  .section-blob {
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 250px; height: 250px;
+    background: var(--purple);
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  /* ===== EDIT CONTROLS ===== */
+  .edit-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--purple);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(107,47,160,0.4);
+    z-index: 1000;
+  }
+  .edit-bar button {
+    background: white;
+    color: var(--purple);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .edit-bar button:hover { background: #eee; }
+
+  /* ===== MODAL FOR IMAGE ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .modal h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+  .modal input[type=text], .modal input[type=file], .modal textarea {
+    width: 100%;
+    border: 2px solid #e0d6f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 10px;
+    font-family: var(--font);
+  }
+  .modal input:focus, .modal textarea:focus { border-color: var(--purple); }
+  .modal textarea { resize: vertical; min-height: 70px; }
+  .modal-label { font-size: 12px; color: var(--gray-text); margin-bottom: 4px; display: block; }
+  .modal-btns { display: flex; gap: 10px; margin-top: 10px; }
+  .modal-btns button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--purple); color: white; }
+  .btn-secondary { background: #f0e8ff; color: var(--purple); }
+  .btn-primary:hover { background: #5a2590; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .edit-bar, .modal-overlay { display: none !important; }
+    .section { page-break-inside: avoid; }
+    .card { break-inside: avoid; }
+    body { background: white; }
+  }
+
+  /* ===== PAGE BREAK HELPERS ===== */
+  .page-break { page-break-before: always; }
+  .avoid-break { page-break-inside: avoid; }
+
+  /* ===== SCROLL SMOOTH ===== */
+  html { scroll-behavior: smooth; }
+
+  /* ===== SAVE BADGE ===== */
+  #save-badge {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<!-- SAVE BADGE -->
+<div id="save-badge">✓ Guardado en el navegador</div>
+
+<!-- MODAL DE IMAGEN -->
+<div class="modal-overlay" id="imgModal">
+  <div class="modal">
+    <h3>Actualizar producto</h3>
+    <label class="modal-label">URL de imagen (o dejá en blanco para usar archivo local):</label>
+    <input type="text" id="modalImgUrl" placeholder="https://... o ruta local">
+    <label class="modal-label">O seleccioná un archivo:</label>
+    <input type="file" id="modalImgFile" accept="image/*">
+    <label class="modal-label">Descripción del producto:</label>
+    <textarea id="modalDesc" placeholder="Descripción opcional..."></textarea>
+    <div class="modal-btns">
+      <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+      <button class="btn-primary" onclick="applyModal()">Aplicar</button>
+    </div>
+  </div>
+</div>
+
+<!-- BARRA DE EDICIÓN -->
+<div class="edit-bar">
+  <span>✏️ Modo edición activo</span>
+  <button onclick="saveAll()">💾 Guardar</button>
+  <button onclick="window.print()">🖨️ Imprimir / PDF</button>
+  <button onclick="exportJSON()">📤 Exportar datos</button>
+</div>
+
+<!-- ==================== PORTADA ==================== -->
+<div class="cover" id="portada">
+  <div class="cover-blob"></div>
+  <div class="cover-blob2"></div>
+  <div class="cover-logo">NADIR<span>.</span></div>
+  <div class="cover-subtitle">Catálogo de Productos · Mayorista</div>
+  <div class="cover-edition">Edición 2025</div>
+  <div class="cover-title">Cocinar<br>es un acto<br>de amor.</div>
+  <div class="cover-desc">
+    La mejor selección de vasos, copas, platos y utensilios para tu hogar y negocio. Calidad y diseño en cada producto.
+  </div>
+  <div class="cover-brands">
+    <div class="cover-brand">NADIR</div>
+    <div class="cover-brand">SM</div>
+    <div class="cover-brand">MARINEX</div>
+    <div class="cover-brand">DURALEX</div>
+    <div class="cover-brand">AMERICANO</div>
+  </div>
+</div>
+
+<!-- ==================== ÍNDICE ==================== -->
+<div class="toc">
+  <h2>Nuestras Categorías</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#mixologia">
+      <div class="toc-num">01</div>
+      <div><div class="toc-name">Mixología</div><div class="toc-count">Cócteles · Shots · Bar</div></div>
+    </a>
+    <a class="toc-item" href="#cerveza">
+      <div class="toc-num">02</div>
+      <div><div class="toc-name">Cerveza</div><div class="toc-count">Vasos · Copas · Jarras</div></div>
+    </a>
+    <a class="toc-item" href="#copas-vino">
+      <div class="toc-num">03</div>
+      <div><div class="toc-name">Copas & Vinos</div><div class="toc-count">Fiore · Brunello · Prestige · Barone</div></div>
+    </a>
+    <a class="toc-item" href="#vasos">
+      <div class="toc-num">04</div>
+      <div><div class="toc-name">Vasos</div><div class="toc-count">Bristol · Amassadinho · Capri y más</div></div>
+    </a>
+    <a class="toc-item" href="#postre">
+      <div class="toc-num">05</div>
+      <div><div class="toc-name">Postre & Helados</div><div class="toc-count">Milk Shake · Copa Helado · Sobremesa</div></div>
+    </a>
+    <a class="toc-item" href="#americano">
+      <div class="toc-num">06</div>
+      <div><div class="toc-name">Americano</div><div class="toc-count">Vasos · Jarras · Cuencos</div></div>
+    </a>
+    <a class="toc-item" href="#sm">
+      <div class="toc-num">07</div>
+      <div><div class="toc-name">Línea SM</div><div class="toc-count">Copas · Vasos · Jarras</div></div>
+    </a>
+    <a class="toc-item" href="#platos">
+      <div class="toc-num">08</div>
+      <div><div class="toc-name">Platos</div><div class="toc-count">Plaza · Menú · Pétala · Gourmet · Blanc</div></div>
+    </a>
+    <a class="toc-item" href="#ensaladeras">
+      <div class="toc-num">09</div>
+      <div><div class="toc-name">Ensaladeras</div><div class="toc-count">Americano · Juegos</div></div>
+    </a>
+    <a class="toc-item" href="#marinex">
+      <div class="toc-num">10</div>
+      <div><div class="toc-name">Marinex – Horno</div><div class="toc-count">Asaderas · Moldes · Bowls</div></div>
+    </a>
+    <a class="toc-item" href="#duralex">
+      <div class="toc-num">11</div>
+      <div><div class="toc-name">Duralex</div><div class="toc-count">Platos Primavera · Diamante</div></div>
+    </a>
+    <a class="toc-item" href="#kits">
+      <div class="toc-num">12</div>
+      <div><div class="toc-name">Kits & Packs</div><div class="toc-count">Degustación · Pack Americano</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- ==================== GENERADO POR JS ==================== -->
+<div id="catalog-root"></div>
+
+<script>
+// =====================================================
+// DATOS DEL CATÁLOGO
+// Editá los precios aquí o directamente haciendo clic
+// en la tarjeta en el navegador.
+// Para agregar/cambiar imagen: clic en la foto de cada producto.
+// =====================================================
+
+const SECTIONS = [
+{
+  id: "mixologia",
+  num: "01",
+  title: "Mixología",
+  subtitle: "La mejor selección para cada trago",
+  heroImg: "",
+  heroAlt: "Cócteles y copas de bar",
+  subsections: [
+    {
+      title: "Cócteles & Gin",
+      products: [
+        { name: "Cóctel", model: "MISTIC", capacity: "340 ml", code: "704806", price: "", img: "", desc: "" },
+        { name: "Cóctel", model: "MISTIC", capacity: "220 ml", code: "724806", price: "", img: "", desc: "" },
+        { name: "Copa para Gin", model: "NADIR", capacity: "600 ml", code: "794806", price: "", img: "", desc: "" },
+        { name: "Copa Cocktail", model: "WINDSOR", capacity: "380 ml", code: "7928/12", price: "", img: "", desc: "" },
+        { name: "Copa Martini", model: "WINDSOR", capacity: "250 ml", code: "7228/12", price: "", img: "", desc: "" },
+        { name: "Copa Mini Martini", model: "WINDSOR", capacity: "100 ml", code: "744801", price: "", img: "", desc: "" },
+        { name: "Cóctel", model: "ILHABELA", capacity: "180 ml", code: "7323/12", price: "", img: "", desc: "" },
+        { name: "Cognac", model: "NADIR", capacity: "330 ml", code: "7528/12", price: "", img: "", desc: "" },
+        { name: "Copa Margarita", model: "WINDSOR", capacity: "335 ml", code: "7628/12", price: "", img: "", desc: "" },
+        { name: "Copa de Licor", model: "ALAMBIC", capacity: "90 ml", code: "2304/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Shots & Licores",
+      products: [
+        { name: "Licor", model: "DONNA", capacity: "65 ml", code: "734801", price: "", img: "", desc: "" },
+        { name: "Shot Tequilero / Licor", model: "NADIR", capacity: "100 ml", code: "714801", price: "", img: "", desc: "" },
+        { name: "Shot Tequila", model: "NADIR", capacity: "60 ml", code: "3033/12", price: "", img: "", desc: "" },
+        { name: "Vaso Soda Bar", model: "BAR", capacity: "150 ml", code: "2148/12", price: "", img: "", desc: "" },
+        { name: "Shot", model: "BRISTOL", capacity: "60 ml", code: "231102", price: "", img: "", desc: "" },
+        { name: "Shot", model: "AMERICANO", capacity: "45 ml", code: "231002", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "cerveza",
+  num: "02",
+  title: "Cerveza",
+  subtitle: "Vasos, copas y jarras para cada estilo",
+  heroImg: "",
+  heroAlt: "Vasos de cerveza",
+  subsections: [
+    {
+      title: "Vasos Cerveza",
+      products: [
+        { name: "Long Drink", model: "AMERICANO", capacity: "300 ml", code: "2710/12", price: "", img: "", desc: "" },
+        { name: "Vaso Pinta", model: "FOLK", capacity: "568 ml", code: "725101", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "FREVO", capacity: "320 ml", code: "7020/12", price: "", img: "", desc: "" },
+        { name: "Vaso Degustación", model: "FREVO", capacity: "220 ml", code: "712002", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "STOUT", capacity: "473 ml", code: "705101", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "STOUT", capacity: "285 ml", code: "715101", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "JOINVILLE", capacity: "680 ml", code: "7941/12", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "JOINVILLE", capacity: "300 ml", code: "7741/12", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "MUNICH", capacity: "530 ml", code: "7909/12", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "MUNICH", capacity: "300 ml", code: "7709/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Copas Cerveza",
+      products: [
+        { name: "Copa Cerveza", model: "DENVER", capacity: "550 ml", code: "707001", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "BELGA", capacity: "500 ml", code: "7651/12", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "DUBLIN", capacity: "400 ml", code: "795101", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "BRUNELLO", capacity: "400 ml", code: "773101", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "WINDSOR", capacity: "330 ml", code: "7728/12", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "FLORIPA", capacity: "300 ml", code: "773201", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Jarras (Chopps)",
+      products: [
+        { name: "Jarra Cerveza", model: "TABERNA", capacity: "600 ml", code: "590201", price: "", img: "", desc: "" },
+        { name: "Jarra Cerveza", model: "TABERNA", capacity: "340 ml", code: "5901/12", price: "", img: "", desc: "" },
+        { name: "Jarra Cerveza", model: "OKTOBER", capacity: "355 ml", code: "590301", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "BRISTOL", capacity: "340 ml", code: "5911/12", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "copas-vino",
+  num: "03",
+  title: "Copas & Vinos",
+  subtitle: "Fiore · Brunello · Prestige · Windsor · Gallant · Florida · Decanter",
+  heroImg: "",
+  heroAlt: "Copas de vino",
+  subsections: [
+    {
+      title: "Línea Fiore",
+      note: "Diseño elegante y sofisticado",
+      products: [
+        { name: "Copa de Agua", model: "FIORE", capacity: "400 ml", code: "707401", price: "", img: "", desc: "" },
+        { name: "Copa Degustación", model: "FIORE", capacity: "515 ml", code: "797406", price: "", img: "", desc: "" },
+        { name: "Copa Champagne", model: "FIORE", capacity: "195 ml", code: "787401", price: "", img: "", desc: "" },
+        { name: "Copa Martini", model: "FIORE", capacity: "215 ml", code: "747406", price: "", img: "", desc: "" },
+        { name: "Sobremesa", model: "FIORE", capacity: "285 ml", code: "7E7401", price: "", img: "", desc: "" },
+        { name: "Copa", model: "FIORE", capacity: "310 ml", code: "777401", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "FIORE", capacity: "315 ml", code: "767402", price: "", img: "", desc: "" },
+        { name: "Rocks", model: "FIORE", capacity: "305 ml", code: "717402", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Brunello",
+      products: [
+        { name: "Brunello Champagne", model: "BRUNELLO", capacity: "225 ml", code: "783101", price: "", img: "", desc: "" },
+        { name: "Copa Brunello", model: "BRUNELLO", capacity: "390 ml", code: "713101", price: "", img: "", desc: "" },
+        { name: "Copa Brunello", model: "BRUNELLO", capacity: "400 ml", code: "773101", price: "", img: "", desc: "" },
+        { name: "Copa Brunello", model: "BRUNELLO", capacity: "490 ml", code: "703101", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Prestige",
+      products: [
+        { name: "Prestige", model: "PRESTIGE", capacity: "600 ml", code: "797306", price: "", img: "", desc: "" },
+        { name: "Prestige", model: "PRESTIGE", capacity: "500 ml", code: "707306", price: "", img: "", desc: "" },
+        { name: "Prestige", model: "PRESTIGE", capacity: "350 ml", code: "787301", price: "", img: "", desc: "" },
+        { name: "Prestige", model: "PRESTIGE", capacity: "220 ml", code: "737301", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Barone",
+      products: [
+        { name: "Copa Barone", model: "BARONE", capacity: "600 ml", code: "795606", price: "", img: "", desc: "" },
+        { name: "Copa Barone", model: "BARONE", capacity: "490 ml", code: "7056/12", price: "", img: "", desc: "" },
+        { name: "Copa Barone", model: "BARONE", capacity: "385 ml", code: "7156/12", price: "", img: "", desc: "" },
+        { name: "Copa Champagne", model: "BARONE", capacity: "190 ml", code: "7856/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Windsor",
+      products: [
+        { name: "Champagne", model: "WINDSOR", capacity: "210 ml", code: "7828/12", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "WINDSOR", capacity: "300 ml", code: "7028/12", price: "", img: "", desc: "" },
+        { name: "Copa de Vino", model: "WINDSOR", capacity: "250 ml", code: "7128/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Gallant",
+      products: [
+        { name: "Champagne", model: "GALLANT", capacity: "180 ml", code: "7008/12", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "GALLANT", capacity: "320 ml", code: "7808/12", price: "", img: "", desc: "" },
+        { name: "Copa de Vino", model: "GALLANT", capacity: "250 ml", code: "7708/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Florida",
+      products: [
+        { name: "Copa Helado", model: "FLORIDA", capacity: "400 ml", code: "7204/12", price: "", img: "", desc: "" },
+        { name: "Copa Cerveza", model: "FLORIDA", capacity: "250 ml", code: "7702/12", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "FLORIDA", capacity: "300 ml", code: "7002/12", price: "", img: "", desc: "" },
+        { name: "Copa Postre", model: "FLORIDA", capacity: "220 ml", code: "7202/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Decanter",
+      products: [
+        { name: "Decanter", model: "MALBEC", capacity: "950 ml", code: "781901", price: "", img: "", desc: "" },
+        { name: "Decanter", model: "MALBEC", capacity: "500 ml", code: "761901", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Ravena",
+      products: [
+        { name: "Vaso", model: "RAVENA", capacity: "480 ml", code: "7I7702", price: "", img: "", desc: "" },
+        { name: "Copa Degustación", model: "RAVENA", capacity: "600 ml", code: "7G770", price: "", img: "", desc: "" },
+        { name: "Copa Ravena", model: "RAVENA", capacity: "500 ml", code: "7A770", price: "", img: "", desc: "" },
+        { name: "Copa Ravena", model: "RAVENA", capacity: "385 ml", code: "7B770", price: "", img: "", desc: "" },
+        { name: "Copa Ravena", model: "RAVENA", capacity: "190 ml", code: "7D770", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "BULGARIA", capacity: "250 ml", code: "A05601", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "vasos",
+  num: "04",
+  title: "Vasos",
+  subtitle: "Bristol · Amassadinho · Capri · Cylinder · Ópera y más",
+  heroImg: "",
+  heroAlt: "Vasos de agua y bebidas",
+  subsections: [
+    {
+      title: "Línea Bristol",
+      products: [
+        { name: "Vaso de Agua", model: "BRISTOL", capacity: "410 ml", code: "2711/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "BRISTOL", capacity: "320 ml", code: "2511/12", price: "", img: "", desc: "" },
+        { name: "Vaso Jugo", model: "BRISTOL", capacity: "200 ml", code: "2111/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "BRISTOL", capacity: "340 ml", code: "2611/12", price: "", img: "", desc: "" },
+        { name: "Vaso Refresco", model: "BRISTOL", capacity: "520 ml", code: "2911/12", price: "", img: "", desc: "" },
+        { name: "Copa Refresco", model: "BRISTOL", capacity: "470 ml", code: "10911/12", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "BRISTOL", capacity: "340 ml", code: "10011/12", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "MARINE", capacity: "340 ml", code: "1004301", price: "", img: "", desc: "" },
+        { name: "Copa Postre", model: "MARINE", capacity: "300 ml", code: "1044301", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "BRISTOL", capacity: "750 ml", code: "540206", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Amassadinho",
+      products: [
+        { name: "Vaso Refresco", model: "AMASSADINHO", capacity: "290 ml", code: "7817/12", price: "", img: "", desc: "" },
+        { name: "Vaso Refresco", model: "AMASSADINHO", capacity: "310 ml", code: "7617/12", price: "", img: "", desc: "" },
+        { name: "Vaso de Agua", model: "AMASSADINHO", capacity: "240 ml", code: "7017/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "AMASSADINHO", capacity: "250 ml", code: "7517/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Capri & Madrid",
+      products: [
+        { name: "Vaso Trago Largo", model: "CAPRI", capacity: "410 ml", code: "7618/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "CAPRI", capacity: "340 ml", code: "7518/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "MADRID", capacity: "395 ml", code: "2O53001", price: "", img: "", desc: "" },
+        { name: "Rocks", model: "MADRID", capacity: "350 ml", code: "2N53001", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "TOPÁZIO", capacity: "360 ml", code: "765801", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "ESTELA", capacity: "460 ml", code: "7661/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Veneto & Cylinder",
+      products: [
+        { name: "Vaso Whisky", model: "VENETO", capacity: "300 ml", code: "7K7602", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "VENETO", capacity: "350 ml", code: "767602", price: "", img: "", desc: "" },
+        { name: "Tubo", model: "CYLINDER", capacity: "320 ml", code: "7800/12", price: "", img: "", desc: "" },
+        { name: "Long Drink", model: "CYLINDER", capacity: "350 ml", code: "7600/12", price: "", img: "", desc: "" },
+        { name: "Vaso de Agua", model: "CYLINDER", capacity: "200 ml", code: "7005/12", price: "", img: "", desc: "" },
+        { name: "Rocks", model: "CYLINDER", capacity: "320 ml", code: "7505/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Ópera & Sevilha",
+      products: [
+        { name: "Vaso Trago Largo", model: "ÓPERA", capacity: "360 ml", code: "7637/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "ÓPERA", capacity: "300 ml", code: "7537/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "SEVILHA", capacity: "395 ml", code: "2O05401", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "SEVILHA", capacity: "335 ml", code: "2N05401", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "VALENCIA", capacity: "350 ml", code: "2N05501", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "VALENCIA", capacity: "395 ml", code: "2O05501", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Ilhabela & Bar",
+      products: [
+        { name: "Vaso Cerveza", model: "CALDERETA", capacity: "350 ml", code: "7701/12", price: "", img: "", desc: "" },
+        { name: "Vaso Licor", model: "OLD FASHIONED", capacity: "220 ml", code: "7101/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "ILHABELA", capacity: "265 ml", code: "180002", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "ILHABELA", capacity: "400 ml", code: "7623/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "ILHABELA", capacity: "350 ml", code: "7923/12", price: "", img: "", desc: "" },
+        { name: "Vaso Martini", model: "ILHABELA", capacity: "180 ml", code: "7323/12", price: "", img: "", desc: "" },
+        { name: "Long Drink", model: "OCA", capacity: "400 ml", code: "7629/12", price: "", img: "", desc: "" },
+        { name: "Vaso Rocks", model: "OCA", capacity: "330 ml", code: "7529/12", price: "", img: "", desc: "" },
+        { name: "Long Drink", model: "VITRAGE", capacity: "350 ml", code: "2641/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "VEGAS", capacity: "330 ml", code: "2752/12", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Dubai & Poema",
+      products: [
+        { name: "Vaso Multiuso", model: "DUBAI", capacity: "500 ml", code: "776402", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "DUBAI", capacity: "480 ml", code: "7664/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "DUBAI", capacity: "350 ml", code: "706401", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "POEMA", capacity: "300 ml", code: "777202", price: "", img: "", desc: "" },
+        { name: "Vaso Jugo", model: "LIGHT'S", capacity: "260 ml", code: "7004/12", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "VEGAS", capacity: "290 ml", code: "2552/12", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "postre",
+  num: "05",
+  title: "Postre & Helados",
+  subtitle: "Milk Shake · Copas de helado · Sobremesa",
+  heroImg: "",
+  heroAlt: "Copas de postre",
+  subsections: [
+    {
+      title: "Postre & Helados",
+      products: [
+        { name: "Milk Shake", model: "TROPICAL", capacity: "360 ml", code: "10712/12", price: "", img: "", desc: "" },
+        { name: "Copa de Helado", model: "TROPICAL", capacity: "300 ml", code: "10412/12", price: "", img: "", desc: "" },
+        { name: "Milk Shake", model: "CLUBE", capacity: "360 ml", code: "792402", price: "", img: "", desc: "" },
+        { name: "Bowl", model: "FIORE", capacity: "475 ml", code: "7S7401", price: "", img: "", desc: "" },
+        { name: "Ice Cream / Helado", model: "FLORIDA", capacity: "400 ml", code: "7202/12", price: "", img: "", desc: "" },
+        { name: "Sobremesa Postre", model: "FLORIDA", capacity: "220 ml", code: "7204/12", price: "", img: "", desc: "" },
+        { name: "Sobremesa Postre", model: "LIGHT'S", capacity: "310 ml", code: "7304/12", price: "", img: "", desc: "" },
+        { name: "Vaso Multiuso", model: "POLI", capacity: "170 ml", code: "440102", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "americano",
+  num: "06",
+  title: "Americano",
+  subtitle: "El clásico que acompaña cada momento",
+  heroImg: "",
+  heroAlt: "Línea Americano",
+  subsections: [
+    {
+      title: "Vasos Americano",
+      products: [
+        { name: "Vaso Refresco", model: "AMERICANO", capacity: "450 ml", code: "2710/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "AMERICANO", capacity: "345 ml", code: "2910/12", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "AMERICANO", capacity: "300 ml", code: "261001", price: "", img: "", desc: "" },
+        { name: "Vaso Multiuso", model: "AMERICANO", capacity: "315 ml", code: "2010/12", price: "", img: "", desc: "" },
+        { name: "Double Old Fashioned", model: "AMERICANO", capacity: "315 ml", code: "241001", price: "", img: "", desc: "" },
+        { name: "Rocks", model: "AMERICANO", capacity: "300 ml", code: "251002", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Jarras Americano",
+      products: [
+        { name: "Jarra", model: "AMERICANO", capacity: "1200 ml", code: "541006", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "AMERICANO", capacity: "750 ml", code: "5401", price: "", img: "", desc: "" },
+        { name: "Jarra Decanter Vintage", model: "AMERICANO", capacity: "1200 ml", code: "881006", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Cuencos con Tapa",
+      products: [
+        { name: "Cuenco c/Tapa Plástica", model: "AMERICANO", capacity: "150 ml", code: "421011", price: "", img: "", desc: "" },
+        { name: "Cuenco c/Tapa Plástica", model: "AMERICANO", capacity: "350 ml", code: "411011", price: "", img: "", desc: "" },
+        { name: "Cuenco c/Tapa Plástica", model: "AMERICANO", capacity: "600 ml", code: "401011", price: "", img: "", desc: "" },
+        { name: "Cuenco c/Tapa Plástica", model: "AMERICANO", capacity: "1 L", code: "46100611", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Cuencos",
+      products: [
+        { name: "Cuenco", model: "AMERICANO", capacity: "150 ml", code: "421002", price: "", img: "", desc: "" },
+        { name: "Cuenco", model: "AMERICANO", capacity: "350 ml", code: "41001", price: "", img: "", desc: "" },
+        { name: "Cuenco", model: "AMERICANO", capacity: "600 ml", code: "4010/12", price: "", img: "", desc: "" },
+        { name: "Cuenco", model: "AMERICANO", capacity: "1 L", code: "461006", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "sm",
+  num: "07",
+  title: "Línea SM",
+  subtitle: "Calidad y practicidad para uso doméstico y eventos",
+  heroImg: "",
+  heroAlt: "Línea SM",
+  subsections: [
+    {
+      title: "Copas SM",
+      products: [
+        { name: "Copa Royal", model: "SM ROYAL", capacity: "615 ml", code: "8090201", price: "", img: "", desc: "" },
+        { name: "Copa Casual", model: "SM CASUAL", capacity: "260 ml", code: "4000202", price: "", img: "", desc: "" },
+        { name: "Copa Casual", model: "SM CASUAL", capacity: "180 ml", code: "4010202", price: "", img: "", desc: "" },
+        { name: "Copa Champagne", model: "SM BUFFET", capacity: "186 ml", code: "7080202", price: "", img: "", desc: "" },
+        { name: "Copa de Agua", model: "SM BUFFET", capacity: "300 ml", code: "7000202", price: "", img: "", desc: "" },
+        { name: "Copa de Vino", model: "SM BUFFET", capacity: "260 ml", code: "7010202", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Vasos SM",
+      products: [
+        { name: "Vaso Trago Largo", model: "SM FIRENZE", capacity: "360 ml", code: "4160202", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "SM FIRENZE", capacity: "275 ml", code: "4150202", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "SM LAGER", capacity: "300 ml", code: "5070202", price: "", img: "", desc: "" },
+        { name: "Vaso Cerveza", model: "SM LAGER", capacity: "200 ml", code: "5070206", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "SM ARUBA", capacity: "465 ml", code: "3060201", price: "", img: "", desc: "" },
+        { name: "Rocks", model: "SM ARUBA", capacity: "345 ml", code: "3050201", price: "", img: "", desc: "" },
+        { name: "Vaso Whisky", model: "SM BROOKLYN", capacity: "310 ml", code: "2550202", price: "", img: "", desc: "" },
+        { name: "Vaso Trago Largo", model: "SM BROOKLYN", capacity: "330 ml", code: "2560202", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Jarras SM",
+      products: [
+        { name: "Jarra", model: "SM ZUMBA", capacity: "1,2 L", code: "54460206", price: "", img: "", desc: "" },
+        { name: "Jarra Ladrillo", model: "SM", capacity: "1,2 L", code: "541206", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "SM TANGO", capacity: "1,5 L", code: "544706", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "SM TANGO", capacity: "750 ml", code: "541706", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "TROPICANA", capacity: "1,75 L", code: "542306", price: "", img: "", desc: "" },
+        { name: "Jarra", model: "MARACATU", capacity: "1,5 L", code: "5418/12", price: "", img: "", desc: "" },
+        { name: "Jarra Bar", model: "BAR", capacity: "1,5 L", code: "5414/12", price: "", img: "", desc: "" },
+        { name: "Jarra Bar", model: "BAR", capacity: "780 ml", code: "5416/12", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "platos",
+  num: "08",
+  title: "Platos",
+  subtitle: "Plaza · Menú · Pétala · Gourmet · Blanc · Jasmim",
+  heroImg: "",
+  heroAlt: "Línea de platos",
+  subsections: [
+    {
+      title: "Línea Plaza",
+      products: [
+        { name: "Plato Playo Grande", model: "PLAZA", capacity: "27 cm", code: "564601", price: "", img: "", desc: "" },
+        { name: "Plato Playo", model: "PLAZA", capacity: "24 cm", code: "554601", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "PLAZA", capacity: "22 cm", code: "584602", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "PLAZA", capacity: "19,5 cm", code: "534602", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Menú",
+      products: [
+        { name: "Plato Playo", model: "MENÚ", capacity: "31 cm", code: "564301", price: "", img: "", desc: "" },
+        { name: "Plato Playo Grande", model: "MENÚ", capacity: "25,5 cm", code: "554301", price: "", img: "", desc: "" },
+        { name: "Plato Playo", model: "MENÚ", capacity: "23 cm", code: "574302", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "MENÚ", capacity: "22 cm", code: "584302", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "MENÚ", capacity: "19 cm", code: "534302", price: "", img: "", desc: "" },
+        { name: "Bowl Vita", model: "MENÚ", capacity: "15,3 cm", code: "584702", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Pétala",
+      products: [
+        { name: "Plato Playo", model: "PÉTALA", capacity: "25,5 cm", code: "574402", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "PÉTALA", capacity: "23,5 cm", code: "584402", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "PÉTALA", capacity: "19 cm", code: "534402", price: "", img: "", desc: "" },
+        { name: "Plato Grill", model: "JASMIM", capacity: "30 x 25 cm", code: "564701", price: "", img: "", desc: "" },
+        { name: "Plato Steak", model: "JASMIM", capacity: "30 x 24 cm", code: "554701", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Peso Controlado & Gourmet",
+      products: [
+        { name: "Plato Playo", model: "PESO CONTROLADO", capacity: "26 cm", code: "554201", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "PESO CONTROLADO", capacity: "23,5 cm", code: "584202", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "PESO CONTROLADO", capacity: "19 cm", code: "534202", price: "", img: "", desc: "" },
+        { name: "Plato Playo", model: "GOURMET", capacity: "25,8 cm", code: "554801", price: "", img: "", desc: "" },
+        { name: "Plato Playo", model: "GOURMET", capacity: "23,5 cm", code: "574801", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "GOURMET", capacity: "22 cm", code: "584801", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "GOURMET", capacity: "19,5 cm", code: "534801", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Blanc",
+      products: [
+        { name: "Plato Playo", model: "BLANC", capacity: "27 cm", code: "554501", price: "", img: "", desc: "" },
+        { name: "Plato Hondo", model: "BLANC", capacity: "22 cm", code: "584502", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "BLANC", capacity: "19 cm", code: "534502", price: "", img: "", desc: "" },
+        { name: "Plato Postre", model: "BLANC", capacity: "19,5 cm", code: "534602-b", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Juegos de Vajilla",
+      products: [
+        { name: "Juego 16 piezas", model: "MENÚ", capacity: "4 servicios", code: "164302", price: "", img: "", desc: "4 platos playos + 4 platos hondos + 4 platos postre + 4 platos sopa" },
+        { name: "Juego 24 piezas", model: "PÉTALA", capacity: "6 servicios", code: "186402", price: "", img: "", desc: "6 platos playos + 6 platos hondos + 6 platos postre + 6 platos sopa" },
+      ]
+    }
+  ]
+},
+{
+  id: "ensaladeras",
+  num: "09",
+  title: "Ensaladeras & Bowls",
+  subtitle: "Americano · Grandes y chicas",
+  heroImg: "",
+  heroAlt: "Ensaladeras de vidrio",
+  subsections: [
+    {
+      title: "Ensaladeras Americano",
+      products: [
+        { name: "Ensaladera Pequeña", model: "AMERICANO", capacity: "390 ml", code: "424502", price: "", img: "", desc: "" },
+        { name: "Ensaladera Mediana", model: "AMERICANO", capacity: "840 ml", code: "414501", price: "", img: "", desc: "" },
+        { name: "Ensaladera Grande", model: "AMERICANO", capacity: "2,3 L", code: "404596", price: "", img: "", desc: "" },
+      ]
+    }
+  ]
+},
+{
+  id: "marinex",
+  num: "10",
+  title: "Marinex – Horno",
+  subtitle: "Asaderas · Moldes · Bowls · Para hornear y almacenar",
+  heroImg: "",
+  heroAlt: "Fuentes para horno Marinex",
+  subsections: [
+    {
+      title: "Asaderas Clásica – Rectangulares",
+      products: [
+        { name: "Fuente Rect. Pequeña", model: "CLÁSICA", capacity: "1,6 L", code: "653201", price: "", img: "", desc: "24,5 x 15,3 x 5,1 cm" },
+        { name: "Fuente Rect. Mediana", model: "CLÁSICA", capacity: "2,2 L", code: "653401", price: "", img: "", desc: "29,5 x 20,9 x 5,1 cm" },
+        { name: "Fuente Rect. Grande", model: "CLÁSICA", capacity: "2,9 L", code: "653601", price: "", img: "", desc: "39,5 x 23,9 x 5,1 cm" },
+        { name: "Fuente Rect. Honda Med.", model: "CLÁSICA", capacity: "3,7 L", code: "653703", price: "", img: "", desc: "39 x 22 x 6 cm" },
+        { name: "Fuente Rect. Honda Grande", model: "CLÁSICA", capacity: "5 L", code: "653803", price: "", img: "", desc: "40,5 x 25,9 x 6,1 cm" },
+      ]
+    },
+    {
+      title: "Asaderas Facilita – Con Tapa Roja",
+      products: [
+        { name: "Fuente Rect. Grande c/Tapa", model: "FACILITA", capacity: "2,9 L", code: "653611", price: "", img: "", desc: "Con tapa plástica roja" },
+        { name: "Fuente Rect. Honda c/Tapa", model: "FACILITA", capacity: "3,7 L", code: "653711", price: "", img: "", desc: "Con tapa plástica roja" },
+        { name: "Fuente Lasagna c/Tapa", model: "FACILITA", capacity: "5 L", code: "653811", price: "", img: "", desc: "Con tapa plástica roja" },
+      ]
+    },
+    {
+      title: "Asaderas Ovales y Redondas",
+      products: [
+        { name: "Fuente Oval Individual", model: "CLÁSICA", capacity: "1,6 L", code: "634301", price: "", img: "", desc: "29,1 x 16,1 x 5 cm" },
+        { name: "Fuente Oval Pequeña", model: "CLÁSICA", capacity: "2,4 L", code: "634501", price: "", img: "", desc: "35,1 x 20,5 x 5,5 cm" },
+        { name: "Fuente Oval Mediana", model: "CLÁSICA", capacity: "3,2 L", code: "666201", price: "", img: "", desc: "" },
+        { name: "Fuente Oval Grande", model: "CLÁSICA", capacity: "4 L", code: "666401", price: "", img: "", desc: "" },
+        { name: "Fuente Redonda", model: "CLÁSICA", capacity: "2,4 L", code: "649501", price: "", img: "", desc: "" },
+        { name: "Fuente Cuadrada Pequeña", model: "CLÁSICA", capacity: "1,1 L", code: "622101", price: "", img: "", desc: "" },
+        { name: "Fuente Cuadrada Mediana", model: "CLÁSICA", capacity: "1,8 L", code: "622201", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Seletta",
+      products: [
+        { name: "Fuente Rect. Pequeña", model: "SELETTA", capacity: "2,1 L", code: "633903", price: "", img: "", desc: "31,5 x 15,5 x 6 cm" },
+        { name: "Fuente Rect. Mediana", model: "SELETTA", capacity: "2,7 L", code: "653503", price: "", img: "", desc: "35,3 x 19,3 x 6 cm" },
+        { name: "Fuente Rect. Grande", model: "SELETTA", capacity: "3,5 L", code: "653903", price: "", img: "", desc: "36,1 x 22,9 x 6 cm" },
+        { name: "Fuente Cuadrada Med.", model: "SELETTA", capacity: "2,5 L", code: "621903", price: "", img: "", desc: "26 x 23,9 x 5,5 cm" },
+        { name: "Fuente Cuadrada Grande", model: "SELETTA", capacity: "3,8 L", code: "622403", price: "", img: "", desc: "35 x 25,1 x 6 cm" },
+        { name: "Fuente Redonda", model: "SELETTA", capacity: "2,4 L", code: "649603", price: "", img: "", desc: "" },
+        { name: "Fuente Oval Mediana", model: "SELETTA", capacity: "3,2 L", code: "666303", price: "", img: "", desc: "" },
+        { name: "Fuente Oval Grande", model: "SELETTA", capacity: "4,2 L", code: "666503", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Moldes – Fileteados & Soufflé",
+      products: [
+        { name: "Molde Fileteado Chico", model: "FILETEADO", capacity: "600 ml", code: "622701", price: "", img: "", desc: "10,1 x 15,9 x 5,9 cm" },
+        { name: "Molde Fileteado Mediano", model: "FILETEADO", capacity: "1,3 L", code: "622801", price: "", img: "", desc: "15,5 x 22,9 x 6,5 cm" },
+        { name: "Molde Fileteado Grande", model: "FILETEADO", capacity: "1,6 L", code: "622901", price: "", img: "", desc: "23,1 x 23,5 x 6,5 cm" },
+        { name: "Molde Soufflé Pequeño", model: "SOUFFLÉ", capacity: "700 ml", code: "638401", price: "", img: "", desc: "15,1 x 5 cm" },
+        { name: "Molde Soufflé Mediano", model: "SOUFFLÉ", capacity: "1,4 L", code: "638601", price: "", img: "", desc: "18 x 5,1 cm" },
+        { name: "Molde Soufflé Grande", model: "SOUFFLÉ", capacity: "2,4 L", code: "638801", price: "", img: "", desc: "21,5 x 9,9 cm" },
+        { name: "Molde para Brioche", model: "MARINEX", capacity: "1,3 L", code: "648702", price: "", img: "", desc: "21,5 x 21,5 x 5,5 cm" },
+      ]
+    },
+    {
+      title: "Cacerolas",
+      products: [
+        { name: "Cacerola Pequeña", model: "MARINEX", capacity: "1 L", code: "645502", price: "", img: "", desc: "20,5 x 15,9 x 6,5 cm" },
+        { name: "Cacerola Mediana", model: "MARINEX", capacity: "2,3 L", code: "645602", price: "", img: "", desc: "26 x 20,1 x 10,5 cm" },
+        { name: "Cacerola Grande", model: "MARINEX", capacity: "2,7 L", code: "645702", price: "", img: "", desc: "23,1 x 22,5 x 10,5 cm" },
+        { name: "Cacerola Redonda Grande", model: "MARINEX", capacity: "4,8 L", code: "645802", price: "", img: "", desc: "35,5 x 25,5 x 10,5 cm" },
+      ]
+    },
+    {
+      title: "Bowls Plus & Bella",
+      products: [
+        { name: "Bowl Plus c/Tapa", model: "PLUS", capacity: "500 ml", code: "400030311", price: "", img: "", desc: "" },
+        { name: "Bowl Plus c/Tapa", model: "PLUS", capacity: "1,4 L", code: "400030611", price: "", img: "", desc: "" },
+        { name: "Bowl Plus c/Tapa", model: "PLUS", capacity: "2,4 L", code: "400030811", price: "", img: "", desc: "" },
+        { name: "Bowl Plus Pequeño", model: "PLUS", capacity: "500 ml", code: "4000303", price: "", img: "", desc: "" },
+        { name: "Bowl Plus Mediano", model: "PLUS", capacity: "1,5 L", code: "4000306", price: "", img: "", desc: "" },
+        { name: "Bowl Plus Grande", model: "PLUS", capacity: "3 L", code: "4000308", price: "", img: "", desc: "" },
+        { name: "Bowl Plus Extra Grande", model: "PLUS", capacity: "4 L", code: "4000309", price: "", img: "", desc: "" },
+        { name: "Bowl Bella Pequeño", model: "BELLA", capacity: "1 L", code: "4000315", price: "", img: "", desc: "" },
+        { name: "Bowl Bella Mediano", model: "BELLA", capacity: "2 L", code: "4000317", price: "", img: "", desc: "" },
+        { name: "Bowl Bella Grande", model: "BELLA", capacity: "3,1 L", code: "4000318", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Facilita Vap – Recipientes c/Tapa",
+      note: "Tapa con salida para vapor",
+      products: [
+        { name: "Recipiente Profundo c/Tapa", model: "FACILITA VAP", capacity: "300 ml", code: "400072911", price: "", img: "", desc: "" },
+        { name: "Recipiente Profundo c/Tapa", model: "FACILITA VAP", capacity: "500 ml", code: "400072311", price: "", img: "", desc: "" },
+        { name: "Fuente Rect. c/Tapa", model: "FACILITA VAP", capacity: "750 ml", code: "400072611", price: "", img: "", desc: "" },
+        { name: "Recipiente Profundo c/Tapa", model: "FACILITA VAP", capacity: "1 L", code: "400072511", price: "", img: "", desc: "" },
+        { name: "Recipiente Profundo c/Tapa", model: "FACILITA VAP", capacity: "2 L", code: "400072711", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Facilita Más & Práctica",
+      products: [
+        { name: "Pote Hermético Cuadrado", model: "FACILITA MÁS", capacity: "500 ml", code: "644811", price: "", img: "", desc: "" },
+        { name: "Pote Hermético Rect.", model: "FACILITA MÁS", capacity: "400 ml", code: "634811", price: "", img: "", desc: "" },
+        { name: "Pote Hermético Rect.", model: "FACILITA MÁS", capacity: "850 ml", code: "654811", price: "", img: "", desc: "" },
+        { name: "Pote Hermético Redondo", model: "FACILITA MÁS", capacity: "1 L", code: "654911", price: "", img: "", desc: "" },
+        { name: "Bowl Redondo c/Tapa", model: "PRÁCTICA", capacity: "600 ml", code: "631211", price: "", img: "", desc: "" },
+        { name: "Bowl Redondo c/Tapa", model: "PRÁCTICA", capacity: "1,2 L", code: "631311", price: "", img: "", desc: "" },
+        { name: "Bowl Redondo c/Tapa", model: "PRÁCTICA", capacity: "2,4 L", code: "672611", price: "", img: "", desc: "" },
+        { name: "Fuente Rect. c/Tapa", model: "PRÁCTICA", capacity: "750 ml", code: "621411", price: "", img: "", desc: "" },
+        { name: "Fuente Rect. c/Tapa", model: "PRÁCTICA", capacity: "1,5 L", code: "621611", price: "", img: "", desc: "" },
+      ]
+    },
+    {
+      title: "Línea Opaline – Fuentes para servir",
+      products: [
+        { name: "Fuente Oval Pequeña", model: "OPALINE", capacity: "0,6 L", code: "635917", price: "", img: "", desc: "25,5 x 18 x 5 cm" },
+        { name: "Fuente Oval Mediana", model: "OPALINE", capacity: "1 L", code: "655917", price: "", img: "", desc: "27,35 x 18 x 5,5 cm" },
+        { name: "Fuente Oval Grande", model: "OPALINE", capacity: "1,4 L", code: "675917", price: "", img: "", desc: "31,1 x 19,5 x 6,05 cm" },
+        { name: "Asadera Oval", model: "OPALINE", capacity: "1,85 L", code: "665917", price: "", img: "", desc: "" },
+        { name: "Fuente Redonda", model: "OPALINE", capacity: "2 L", code: "685917", price: "", img: "", desc: "18,5 x 5,1 cm" },
+        { name: "Asadera Redonda", model: "OPALINE", capacity: "3 L", code: "695917", price: "", img: "", desc: "40,1 x 59,1 cm" },
+      ]
+    }
+  ]
+},
+{
+  id: "duralex",
+  num: "11",
+  title: "Duralex",
+  subtitle: "Vidrio templado · Apto microondas, freezer y lavavajillas",
+  heroImg: "",
+  heroAlt: "Platos Duralex",
+  subsections: [
+    {
+      title: "Línea Primavera",
+      products: [
+        { name: "Plato Hondo", model: "PRIMAVERA", capacity: "22,5 cm", code: "583102", price: "", img: "", desc: "Vidrio templado" },
+        { name: "Plato Postre", model: "PRIMAVERA", capacity: "19 cm", code: "533102", price: "", img: "", desc: "Vidrio templado" },
+        { name: "Plato Playo", model: "PRIMAVERA", capacity: "23 cm", code: "573102", price: "", img: "", desc: "Vidrio templado" },
+      ]
+    },
+    {
+      title: "Línea Diamante",
+      products: [
+        { name: "Plato Hondo", model: "DIAMANTE", capacity: "22,5 cm", code: "5838/12", price: "", img: "", desc: "Vidrio templado" },
+        { name: "Plato Postre", model: "DIAMANTE", capacity: "19 cm", code: "5338/12", price: "", img: "", desc: "Vidrio templado" },
+        { name: "Plato Playo", model: "DIAMANTE", capacity: "23 cm", code: "5738/12", price: "", img: "", desc: "Vidrio templado" },
+      ]
+    }
+  ]
+},
+{
+  id: "kits",
+  num: "12",
+  title: "Kits & Packs",
+  subtitle: "Perfectos para regalar o regalarte",
+  heroImg: "",
+  heroAlt: "Kits y packs",
+  subsections: [
+    {
+      title: "Kits de Degustación",
+      products: [
+        { name: "Kit Degustación Cervecero", model: "NADIR", capacity: "5 vasos cerveza", code: "08510201080137", price: "", img: "", desc: "5 vasos cerveceros surtidos en caja litografiada" },
+        { name: "Kit Decanter + Copas Brunello", model: "NADIR", capacity: "3 piezas", code: "3x163103", price: "", img: "", desc: "1 Decanter + 2 Copas Brunello + Caja litografiada" },
+        { name: "Kit Decanter + Copas Barone", model: "NADIR", capacity: "3 piezas", code: "3x165603", price: "", img: "", desc: "1 Decanter + 2 Copas Barone + Caja litografiada" },
+      ]
+    },
+    {
+      title: "Packs Vasos",
+      products: [
+        { name: "Pack Ópera Whisky", model: "ÓPERA x6", capacity: "300 ml", code: "7537/06", price: "", img: "", desc: "6 vasos whisky" },
+        { name: "Pack Ópera Trago Largo", model: "ÓPERA x6", capacity: "360 ml", code: "7637/06", price: "", img: "", desc: "6 vasos trago largo" },
+        { name: "Pack Dubai Trago Corto", model: "DUBAI x6", capacity: "480 ml", code: "766406", price: "", img: "", desc: "6 vasos" },
+        { name: "Pack Dubai Trago Largo", model: "DUBAI x6", capacity: "385 ml", code: "776406", price: "", img: "", desc: "6 vasos" },
+      ]
+    },
+    {
+      title: "Packs Copas",
+      products: [
+        { name: "Pack Capri Trago Largo", model: "CAPRI x6", capacity: "410 ml", code: "7618/06", price: "", img: "", desc: "6 vasos" },
+        { name: "Pack Windsor Copa Cerveza", model: "WINDSOR x6", capacity: "330 ml", code: "7728/06", price: "", img: "", desc: "6 copas" },
+        { name: "Pack Barone Copa Agua", model: "BARONE x6", capacity: "385 ml", code: "785606", price: "", img: "", desc: "6 copas" },
+        { name: "Pack Barone Champagne", model: "BARONE x6", capacity: "190 ml", code: "201806", price: "", img: "", desc: "6 copas" },
+        { name: "Pack Maracatu", model: "MARACATU x6", capacity: "265 ml", code: "705606", price: "", img: "", desc: "6 vasos" },
+      ]
+    },
+    {
+      title: "Pack Americano",
+      products: [
+        { name: "Pack Americano", model: "AMERICANO", capacity: "4 vasos + 1 botellón", code: "881006", price: "", img: "", desc: "4 Vasos Trago Largo + 1 Jarra Botellón Vintage" },
+      ]
+    }
+  ]
+}
+];
+
+// =====================================================
+// STORAGE
+// =====================================================
+function getSaved() {
+  try { return JSON.parse(localStorage.getItem('nadir_catalog') || '{}'); } catch(e) { return {}; }
+}
+function setSaved(data) {
+  localStorage.setItem('nadir_catalog', JSON.stringify(data));
+}
+
+// =====================================================
+// RENDER
+// =====================================================
+function placeholderIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <rect x="3" y="3" width="18" height="18" rx="3"/>
+    <circle cx="12" cy="11" r="3"/>
+    <path d="M3 19l4-4 3 3 4-5 4 4"/>
+  </svg>`;
+}
+
+function renderCard(p, sectionId, subIdx, pIdx) {
+  const saved = getSaved();
+  const key = `${sectionId}__${subIdx}__${pIdx}`;
+  const savedData = saved[key] || {};
+  const price = savedData.price !== undefined ? savedData.price : p.price;
+  const img = savedData.img !== undefined ? savedData.img : p.img;
+  const desc = savedData.desc !== undefined ? savedData.desc : p.desc;
+
+  const imgContent = img
+    ? `<img src="${img}" alt="${p.model} ${p.name}">`
+    : `<div class="card-img-placeholder">${placeholderIcon()}<span>Agregar foto</span></div>`;
+
+  const descHtml = desc ? `<div class="card-desc">${desc}</div>` : '';
+
+  return `
+    <div class="card" data-key="${key}">
+      <div class="card-img" onclick="openModal('${key}')">
+        ${imgContent}
+        <div class="card-img-overlay"><span>Cambiar imagen</span></div>
+      </div>
+      <div class="card-name">${p.name}</div>
+      <div class="card-model">${p.model}</div>
+      <div class="card-capacity">${p.capacity}</div>
+      ${descHtml}
+      <div class="card-price-wrap">
+        <div class="card-price-label">Precio</div>
+        <div class="card-price"
+          contenteditable="true"
+          data-key="${key}"
+          data-field="price"
+          onblur="saveField(this)"
+          onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur();}"
+        >${price || '$ ─ ─ ─ ─'}</div>
+        <span class="card-price-sub">Clic para editar precio</span>
+      </div>
+      <div class="card-code">${p.code}</div>
+    </div>`;
+}
+
+function renderSection(sec) {
+  const saved = getSaved();
+
+  const heroHtml = sec.heroImg
+    ? `<div class="section-hero"><img src="${sec.heroImg}" alt="${sec.heroAlt}"></div>`
+    : `<div class="section-hero">
+        <div class="section-hero-placeholder">
+          <div>${placeholderIcon()}</div>
+          <div style="font-size:10px;margin-top:6px;">Imagen de categoría<br>Clic para cambiar</div>
+        </div>
+       </div>`;
+
+  let subsHtml = '';
+  sec.subsections.forEach((sub, subIdx) => {
+    const noteHtml = sub.note ? `<div class="subsection-note">${sub.note}</div>` : '';
+    const cardsHtml = sub.products.map((p, pIdx) => renderCard(p, sec.id, subIdx, pIdx)).join('');
+    subsHtml += `
+      <div class="subsection avoid-break">
+        <div class="subsection-title">${sub.title}${noteHtml}</div>
+        <div class="grid">${cardsHtml}</div>
+      </div>`;
+  });
+
+  return `
+    <div class="section blob-section" id="${sec.id}">
+      <div class="section-blob"></div>
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-logo">NADIR<span>.</span></div>
+          <div class="section-title">${sec.title}</div>
+          <div class="section-subtitle">${sec.subtitle}</div>
+        </div>
+        ${heroHtml}
+      </div>
+      ${subsHtml}
+    </div>`;
+}
+
+function renderAll() {
+  const root = document.getElementById('catalog-root');
+  root.innerHTML = SECTIONS.map(renderSection).join('');
+}
+
+renderAll();
+
+// =====================================================
+// EDICION
+// =====================================================
+let currentKey = null;
+
+function openModal(key) {
+  currentKey = key;
+  const saved = getSaved();
+  const data = saved[key] || {};
+  document.getElementById('modalImgUrl').value = data.img || '';
+  document.getElementById('modalDesc').value = data.desc || '';
+  document.getElementById('imgModal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('imgModal').classList.remove('active');
+  currentKey = null;
+}
+
+function applyModal() {
+  if (!currentKey) return;
+  const url = document.getElementById('modalImgUrl').value.trim();
+  const fileInput = document.getElementById('modalImgFile');
+  const desc = document.getElementById('modalDesc').value.trim();
+
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      saveKeyData(currentKey, { img: e.target.result, desc });
+      closeModal();
+      renderAll();
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+  } else {
+    saveKeyData(currentKey, { img: url, desc });
+    closeModal();
+    renderAll();
+  }
+}
+
+function saveKeyData(key, newData) {
+  const saved = getSaved();
+  saved[key] = { ...(saved[key] || {}), ...newData };
+  setSaved(saved);
+}
+
+function saveField(el) {
+  const key = el.getAttribute('data-key');
+  const field = el.getAttribute('data-field');
+  const value = el.innerText.trim();
+  saveKeyData(key, { [field]: value });
+}
+
+function saveAll() {
+  const badge = document.getElementById('save-badge');
+  badge.style.display = 'block';
+  setTimeout(() => { badge.style.display = 'none'; }, 2500);
+}
+
+function exportJSON() {
+  const saved = getSaved();
+  const blob = new Blob([JSON.stringify(saved, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'nadir_precios.json';
+  a.click();
+}
+
+// Close modal on overlay click
+document.getElementById('imgModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Import JSON (drag and drop)
+document.addEventListener('dragover', e => e.preventDefault());
+document.addEventListener('drop', function(e) {
+  e.preventDefault();
+  const file = e.dataTransfer.files[0];
+  if (file && file.name.endsWith('.json')) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        const data = JSON.parse(ev.target.result);
+        localStorage.setItem('nadir_catalog', JSON.stringify(data));
+        renderAll();
+        alert('¡Datos importados correctamente!');
+      } catch(err) {
+        alert('Error al importar: archivo JSON inválido');
+      }
+    };
+    reader.readAsText(file);
+  }
+});
+</script>
+</body>
+</html>
